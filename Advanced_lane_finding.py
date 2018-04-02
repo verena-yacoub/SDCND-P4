@@ -343,8 +343,8 @@ right_fit=[]
 
  #--------------------------------------------------------------------------------------------------   
 
-video_output1 = 'challenge_video_output.mp4'
-video_input1 = VideoFileClip('challenge_video.mp4').subclip(1,3)
+video_output1 = 'project_output.mp4'
+video_input1 = VideoFileClip('project_video.mp4').subclip(1,3)
 processed_video = video_input1.fl_image(process)
 processed_video.write_videofile(video_output1, audio=False)
 
