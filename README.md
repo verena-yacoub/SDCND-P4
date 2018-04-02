@@ -16,8 +16,8 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./output_images/calibration.JPG 
-[image2]: ./output_images/undistortion.JPG 
-[image3]: ./output_images/processing.JPG
+[image2]: ./output_images/pipeline_figure.jpg 
+
 
 
 ## Rubric Points Discussion
