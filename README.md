@@ -15,9 +15,9 @@ The goals / steps of this project are the following:
 ---
 [//]: # (Image References)
 
-[image1]: ./output_images/calibration.jpg 
-[image2]: ./output_images/undistortion.jpg 
-[image3]: ./examples/processing.jpg 
+[image1]: ./output_images/calibration.JPG 
+[image2]: ./output_images/undistortion.JPG 
+[image3]: ./output_images/processing.JPG
 
 
 ## Rubric Points Discussion
@@ -29,7 +29,9 @@ The goals / steps of this project are the following:
 
 * [The first part of the code](https://github.com/verena-yacoub/SDCND-P4/blob/master/Advanced_lane_finding.py#L31-L44) was dedicated to calibration and calculation of objectpoints and imagepoints array with the helpe of the `cv2.findChessboardCorners()` function  
    * "object points" are the (x, y, z) coordinates of the chessboard corners in the real world. HereIt is assumed that it is planar  fixed on the (x, y) at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  
-   * `imgpoints` will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection.  
+   * `imgpoints` will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection. 
+   
+To visualize the corners detected, the function `cv2.drawChessboardCorners()` was used and generated the following pictures   
 
 
 ![alt text][image1]
