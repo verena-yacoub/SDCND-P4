@@ -44,7 +44,7 @@ Then`objpoints` and `imgpoints` previously generated were used to compute the ca
 
 #### 2. color transforms and binary images
 
-[In the code] (https://github.com/verena-yacoub/SDCND-P4/blob/master/Advanced_lane_finding.py#L66-L91) a combination of color and gradient thresholds to generate a binary image:
+[In the code](https://github.com/verena-yacoub/SDCND-P4/blob/master/Advanced_lane_finding.py#L66-L91) a combination of color and gradient thresholds to generate a binary image:
 * First img is converted to HLS color space
 * Sobel edge detection was applied to the L channel
 * Thresholding was applied to S channel 
@@ -53,7 +53,7 @@ Then`objpoints` and `imgpoints` previously generated were used to compute the ca
 
 #### 3. perspective transform 
 
-[The code for perspective transform] (https://github.com/verena-yacoub/SDCND-P4/blob/master/Advanced_lane_finding.py#L41-L62) was based on `src` and `dst` points were generated roughly to cover a bottom cemtered trapezoid and then the transform was applied using `cv2.getPerspectiveTransform()` and `cv2.warpPerspective`
+[The code for perspective transform](https://github.com/verena-yacoub/SDCND-P4/blob/master/Advanced_lane_finding.py#L41-L62) was based on `src` and `dst` points were generated roughly to cover a bottom cemtered trapezoid and then the transform was applied using `cv2.getPerspectiveTransform()` and `cv2.warpPerspective`
 
 This resulted in the following source and destination points:
 
@@ -64,15 +64,19 @@ This resulted in the following source and destination points:
 | 768, 480      | 1255, 695     |
 | 1280, 720     | 1255, 25      |
 
-I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
+Prespective transform is verified and plotted below.
 
 
 #### 4. Sliding window search to find lines 
+ [This part](https://github.com/verena-yacoub/SDCND-P4/blob/master/Advanced_lane_finding.py#L93-L176) is performed as follows:
+* a histogram was constructed adding up pixels vertically showing positional information on the X axis 
+* the highest left and right peaks were used as areference starting point for the slide window search to begin
+* windows are slid and are shifting centers if a certain number of high value pixels were found around 
+* all lane lines were marked and their indices registered 
+* a polyfit line, using `np.polyfit()` was drawn between the lane points at each side 
 
-Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
 
-
-#### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
+#### 5. the radius of curvature of the lane and the position of the vehicle with respect to center.
 
 I did this in lines # through # in my code in `my_other_file.py`
 
