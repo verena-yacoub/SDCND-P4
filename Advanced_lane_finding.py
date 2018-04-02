@@ -1,18 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Mar 30 17:08:09 2018
-
-@author: Verena Maged
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Mar 28 15:36:17 2018
-
-@author: Verena Maged
-"""
-
-
 """
 This code was mostly taken from udacity carnd classroom Lesson 15 Advanced lane finding 
 
