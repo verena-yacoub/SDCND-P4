@@ -40,19 +40,20 @@ To visualize the corners detected, the function `cv2.drawChessboardCorners()` wa
 ### Pipeline (single images)
 
 #### 1.distortion-corrected image.
-Then`objpoints` and `imgpoints` previously generated were used to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()` 
+Then`objpoints` and `imgpoints` previously generated were used to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function. Distortion correction to the test image was applied using the `cv2.undistort()` in the [code](https://github.com/verena-yacoub/SDCND-P4/blob/master/Advanced_lane_finding.py#L34-L39)
 
-To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
+#### 2. color transforms and binary images
+
+[In the code] (https://github.com/verena-yacoub/SDCND-P4/blob/master/Advanced_lane_finding.py#L66-L91) a combination of color and gradient thresholds to generate a binary image:
+* First img is converted to HLS color space
+* Sobel edge detection was applied to the L channel
+* Thresholding was applied to S channel 
+* Then the two latter were combined
 
 
-#### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
+#### 3. perspective transform 
 
-I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
-
-
-#### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
-
-The code for my perspective transform includes a function called `warper()`, which appears in lines 1 through 8 in the file `example.py` (output_images/examples/example.py) (or, for example, in the 3rd code cell of the IPython notebook).  The `warper()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
+[The code for perspective transform] (https://github.com/verena-yacoub/SDCND-P4/blob/master/Advanced_lane_finding.py#L41-L62) was based on `src` and `dst` points were generated roughly to cover a bottom cemtered trapezoid and then the transform was applied using `cv2.getPerspectiveTransform()` and `cv2.warpPerspective`
 
 This resulted in the following source and destination points:
 
@@ -66,7 +67,7 @@ This resulted in the following source and destination points:
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
 
-#### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
+#### 4. Sliding window search to find lines 
 
 Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
 
@@ -85,14 +86,12 @@ I implemented this step in lines # through # in my code in `yet_another_file.py`
 
 ### Pipeline (video)
 
-#### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
-
 Here's a [link to my video result](./project_output.mp4)
 
 ---
 
 ### Discussion
 
-#### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
-
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+### References 
+* Udacity classroom
+* *https://github.com/k4jeremy-shannon/CarND-Advanced-Lane-Lines
