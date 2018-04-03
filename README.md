@@ -78,11 +78,14 @@ Prespective transform is verified and plotted below.
 
 #### 5. the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-I did this in lines # through # in my code in `my_other_file.py`
+[In the code](https://github.com/verena-yacoub/SDCND-P4/blob/master/Advanced_lane_finding.py#L251-L267)
+* a conversion from pixels to real world dimensions is defined from the classroom 
+* then the polyfit is redefined accordingly 
+* and the radius of curvature is calculated mathematically 
 
-#### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
+#### 6. Drawing pipeline results 
 
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
+All results of the pipeline were plotted with [this code attached](https://github.com/verena-yacoub/SDCND-P4/blob/master/output_images/plotting_pipeline.py) and shown below 
 
 ![alt text][image2]
 
