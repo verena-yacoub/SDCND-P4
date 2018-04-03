@@ -75,13 +75,19 @@ Prespective transform is verified and plotted below.
 * all lane lines were marked and their indices registered 
 * a polyfit line, using `np.polyfit()` was drawn between the lane points at each side 
 
+*Through this part a startegy to use history of fit line and search around it as shown in [here](https://github.com/verena-yacoub/SDCND-P4/blob/master/Advanced_lane_finding.py#L120-L122)*
+*Consequently, a [condition](https://github.com/verena-yacoub/SDCND-P4/blob/master/Advanced_lane_finding.py#L139) is added to check how parallel the fit curves are and if a limit is broken window search is initiated again to ensure a good accuracy* 
+
 
 #### 5. the radius of curvature of the lane and the position of the vehicle with respect to center.
 
 [In the code](https://github.com/verena-yacoub/SDCND-P4/blob/master/Advanced_lane_finding.py#L251-L267)
 * a conversion from pixels to real world dimensions is defined from the classroom 
 * then the polyfit is redefined accordingly 
-* and the radius of curvature is calculated mathematically 
+* and the radius of curvature is calculated [mathematically](http://mathworld.wolfram.com/RadiusofCurvature.html) 
+* Theoretically the camera is fixed at the car center, so that the center of the image corresponds to the center of the car, so that the X position of the car relative to the frame is exactly at the midpoint
+* lane center position is exactly the middle of both lane curves 
+
 
 #### 6. Drawing pipeline results 
 
@@ -98,7 +104,10 @@ Here's a [link to my video result](./project_output.mp4)
 ---
 
 ### Discussion
+* Experimenting the code with the challenge video falsly detected edges appeared which implies that probably a change in the preprocessing step and binary thresholding is needed (may me color detection combined integrated in pipeline)
+* Also, Hough transform may be useful for further experiments with the project 
+
 
 ### References 
 * Udacity classroom
-* *https://github.com/k4jeremy-shannon/CarND-Advanced-Lane-Lines
+* *https://github.com/k4jeremy-shannon/CarND-Advanced-Lane-Lines*
