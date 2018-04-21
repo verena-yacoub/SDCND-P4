@@ -112,7 +112,7 @@ Here's a [link to my video result](./project_output.mp4)
 * mistake of not considering the histogram bases of each frame in curvature calculation was fixed [here](https://github.com/verena-yacoub/SDCND-P4/blob/master/Advanced_lane_finding_resubmission.py#L35)
 * unnecessary recalculation of camera calibration is avoided by reallocating [this](https://github.com/verena-yacoub/SDCND-P4/blob/master/Advanced_lane_finding_resubmission.py#L35) line
 
-*here is the reprocessed [video](https://github.com/verena-yacoub/SDCND-P4/blob/master/project_output_resubmission.mp4) 
+*here is the reprocessed [video](https://github.com/verena-yacoub/SDCND-P4/blob/master/project_output_resubmission.mp4)* 
 
 ### References 
 * Udacity classroom
