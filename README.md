@@ -107,6 +107,10 @@ Here's a [link to my video result](./project_output.mp4)
 * Experimenting the code with the challenge video falsly detected edges appeared which implies that probably a change in the preprocessing step and binary thresholding is needed (may me color detection combined integrated in pipeline)
 * Also, Hough transform may be useful for further experiments with the project 
 
+### Notes for resubmission
+* mistake of plotting on the original frame image instead of the undistorted one was fixed [here](https://github.com/verena-yacoub/SDCND-P4/blob/master/Advanced_lane_finding_resubmission.py#L339)
+* mistake of not considering the histogram bases of each frame in curvature calculation was fixed [here](https://github.com/verena-yacoub/SDCND-P4/blob/master/Advanced_lane_finding_resubmission.py#L35)
+* unnecessary recalculation of camera calibration is avoided by reallocating [this](https://github.com/verena-yacoub/SDCND-P4/blob/master/Advanced_lane_finding_resubmission.py#L35) line
 
 ### References 
 * Udacity classroom
